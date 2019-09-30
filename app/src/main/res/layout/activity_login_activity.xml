@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@mipmap/activity2_background"
+    android:layout_height="match_parent"
+    tools:context=".login_activity">
+    <Button
+        android:id="@+id/orglogin"
+        android:layout_width="231dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/login_button"
+        android:text="Login"
+
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/username_text_input_layout"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="@+id/username_text_input_layout"
+        app:layout_constraintTop_toBottomOf="@+id/username_text_input_layout" />
+
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="231dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/register"
+        android:text="Register"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColorHint="#B4AEAE"
+        android:textCursorDrawable="@null"
+        app:layout_constraintEnd_toEndOf="@+id/orglogin"
+        app:layout_constraintHorizontal_bias="0.477"
+        app:layout_constraintStart_toStartOf="@+id/orglogin"
+        app:layout_constraintTop_toBottomOf="@+id/orglogin" />
+
+
+    <EditText
+        android:id="@+id/orgun"
+        android:layout_width="285dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/text_design"
+        android:drawableLeft="@drawable/username_icon"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        android:textColor="#fff"
+        android:textColorHint="#9C8E8E"
+        app:layout_constraintEnd_toEndOf="@+id/title"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/username_text_input_layout"
+        android:layout_width="286dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:textColorHint="#A39A9A"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orgun"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="#FFFFFF">
+
+        <EditText
+            android:id="@+id/orgpas"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/text_design"
+            android:drawableStart="@drawable/password_icon"
+            android:drawableLeft="@drawable/username_icon"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:maxLength="15"
+            android:textColor="#fff"
+            android:textColorHint="#867F7F"
+            android:textColorLink="#fff"
+            android:textCursorDrawable="@null"
+            app:layout_constraintEnd_toEndOf="@+id/title"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toStartOf="@+id/title"
+            tools:layout_editor_absoluteY="356dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="205dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="176dp"
+        android:text="Login as User"
+        android:textColor="#F00E0B0B"
+        android:textColorHighlight="#001A1111"
+        android:textColorHint="#00000000"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@mipmap/activity2_background"
+    android:layout_height="match_parent"
+
+    tools:context=".Register_activity">
+
+    <TextView
+        android:id="@+id/register_title"
+        android:layout_width="284dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="96dp"
+        android:text="Create New User Account"
+        android:textColor="#571010"
+        android:textSize="24sp"
+        android:textStyle="normal|bold"
+        app:layout_constraintEnd_toEndOf="@+id/fullname_text"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="@+id/fullname_text"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/fullname_text"
+        android:layout_width="294dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/text_design"
+        android:drawableLeft="@drawable/fullname_icon"
+        android:ems="10"
+        android:hint="Full Name"
+        android:inputType="textPersonName"
+        android:textColorHint="#fff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_title" />
+
+    <EditText
+        android:id="@+id/email_text"
+        android:layout_width="294dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/text_design"
+        android:drawableLeft="@drawable/email_icon"
+        android:ems="10"
+        android:hint="Email Adderss"
+        android:inputType="textEmailAddress"
+        android:textColorHint="#fff"
+        app:layout_constraintEnd_toEndOf="@+id/fullname_text"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="@+id/fullname_text"
+        app:layout_constraintTop_toBottomOf="@+id/fullname_text" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_text_input_layout"
+        android:layout_width="301dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="8dp"
+        android:hint=" "
+        app:layout_constraintEnd_toEndOf="@+id/email_text"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/email_text"
+        app:layout_constraintTop_toBottomOf="@+id/email_text">
+
+        <EditText
+            android:id="@+id/password_text_register"
+            android:layout_width="294dp"
+            android:layout_height="38dp"
+            android:background="@drawable/text_design"
+            android:drawableLeft="@drawable/password_icon"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColorHint="#fff"
+            tools:layout_editor_absoluteX="46dp"
+            tools:layout_editor_absoluteY="325dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <EditText
+        android:id="@+id/confirm_password"
+        android:layout_width="294dp"
+        android:layout_height="38dp"
+        android:background="@drawable/text_design"
+        android:drawableLeft="@drawable/password_icon"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:textColorHint="#fff"
+        app:layout_constraintEnd_toEndOf="@+id/password_text_input_layout"
+        app:layout_constraintStart_toStartOf="@+id/password_text_input_layout"
+        app:layout_constraintTop_toBottomOf="@+id/password_text_input_layout" />
+
+    <EditText
+        android:id="@+id/mobile_number"
+        android:layout_width="294dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/text_design"
+        android:drawableLeft="@drawable/phone_icon"
+        android:ems="10"
+        android:hint="Mobile Number"
+        android:inputType="numberSigned"
+        android:textColorHint="#fff"
+        app:layout_constraintEnd_toEndOf="@+id/confirm_password"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/confirm_password"
+        app:layout_constraintTop_toBottomOf="@+id/confirm_password" />
+
+    <Button
+        android:id="@+id/register_button_register"
+        android:layout_width="151dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/register"
+        android:text="Register"
+        app:layout_constraintEnd_toEndOf="@+id/mobile_number"
+        app:layout_constraintStart_toStartOf="@+id/mobile_number"
+        app:layout_constraintTop_toBottomOf="@+id/mobile_number" />
+
+
+    <Button
+        android:id="@+id/login_again"
+        android:layout_width="262dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        android:text="Already have an account? Login"
+        android:textColor="#18FFFF"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/register_button_register"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/register_button_register"
+        app:layout_constraintTop_toBottomOf="@+id/register_button_register" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

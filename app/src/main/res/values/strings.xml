@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="action_settings">Settings</string>
+    <string name="user">User</string>
+    <string name="ngo">NGO</string>
+    <string name="welcome_to_helpus">Welcome to HelpUs..</string>
+    <string name="donation">Donation</string>
+    <string name="my_profile">My Profile</string>
+    <string name="logout">Logout</string>
+    <string name="loginhomepageimg">LoginHomePageImg</string>
+    <string name="feedback">Feedback</string>
+    <string name="history">History</string>
+    <string name="help_now">Help Now!</string>
+    <string name="donations">Donations</string>
+    <string name="helped_to">Helped To</string>
+    <string name="profile">Profile</string>
+    <string name="donate">donate</string>
+</resources>
