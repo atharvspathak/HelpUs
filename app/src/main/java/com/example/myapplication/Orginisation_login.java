@@ -23,6 +23,7 @@ public class Orginisation_login extends AppCompatActivity {
         un=(EditText) findViewById(R.id.orgun);
         pas=(EditText) findViewById(R.id.orgpas);
 
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
