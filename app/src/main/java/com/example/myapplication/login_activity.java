@@ -56,6 +56,7 @@ public class login_activity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() { //.getText.tos\String() method use
             @Override
             public void onClick(View view) {
+
                 valdation(username.getText().toString(),password.getText().toString()); //If usname and pass match then go to next activity
 
 
