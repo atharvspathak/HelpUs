@@ -40,7 +40,8 @@ public class login_activity extends AppCompatActivity {
         String title=intent.getStringExtra(MainActivity.EXTRA_TEXT);
 
         TextView t1=(TextView) findViewById(R.id.title);
-        t1.setText(title);
+        t1.setText(title);         //to set title
+
 
 
         username=(EditText)findViewById(R.id.orgun);
@@ -53,7 +54,7 @@ public class login_activity extends AppCompatActivity {
 
 
 
-        login.setOnClickListener(new View.OnClickListener() { //.getText.tos\String() method use
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,19 +18,22 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Register_activity extends AppCompatActivity {
     private EditText full_name_text;
     private EditText email_addreass_text;
-    private EditText user_name_text;
+
     private EditText password_text;
     private EditText confirm_password_text;
     private EditText mobile_number_text;
     private FirebaseAuth firebaseAuth;
+    String fnt,email,pass,cpass,mobile;
 
     private Button register;
 
-    private Button login_again;
+
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +69,7 @@ public class Register_activity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+                                SendUser();                                                         //call send user function
                                 Toast.makeText(Register_activity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
                                 finish();
 
@@ -83,15 +88,15 @@ public class Register_activity extends AppCompatActivity {
                 }
             }
 
-    });
+        });
     }
 
-     boolean validate() {
-        String fnt=full_name_text.getText().toString();
-        String email=email_addreass_text.getText().toString().trim();
-        String pass=password_text.getText().toString().trim();
-        String cpass=confirm_password_text.getText().toString().trim();
-        String mobile=mobile_number_text.getText().toString().trim();
+    boolean validate() {
+        fnt=full_name_text.getText().toString();
+        email=email_addreass_text.getText().toString().trim();
+        pass=password_text.getText().toString().trim();
+        cpass=confirm_password_text.getText().toString().trim();
+        mobile=mobile_number_text.getText().toString().trim();
 
         if(fnt.isEmpty() || email.isEmpty() || pass.isEmpty() || cpass.isEmpty() || mobile.isEmpty())
         {
@@ -103,11 +108,27 @@ public class Register_activity extends AppCompatActivity {
 
             if(pass.equals(cpass))
             {
-              return true;
+                return true;
             }
             return  false;
 
         }
+    }
+
+   public void SendUser(){
+
+
+        FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();                           //Create db instane
+        DatabaseReference databaseReference=firebaseDatabase.getReference().child(firebaseAuth.getUid());      //Create refrence //getrRefrensce(firebaseAuth.geetUid();
+        SendData sd=new SendData();                                                                 //Cr5eate obj of send data
+        sd.setName(fnt);                                                                            //set name
+        sd.setEmail(email);                                                                         //set email
+        sd.setContact(mobile);                                                                      //set contact
+        databaseReference.push().setValue(sd);                                                      //push sd values
+        Toast.makeText(Register_activity.this,"Data Uploaded successfully",Toast.LENGTH_SHORT).show();; //make toast
+
+
+
     }
 
 
@@ -116,5 +137,38 @@ public class Register_activity extends AppCompatActivity {
 
 
 
+
+}
+//To send Data
+class SendData {
+    String Name,Email,Contact;
+
+
+    public SendData() {
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
+    }
+
+    public String getContact() {
+        return Contact;
+    }
+
+    public void setContact(String contact) {
+        Contact = contact;
+    }
 }
 
