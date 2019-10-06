@@ -4,11 +4,14 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="         Help Us"
+        android:icon="@mipmap/icon"
+        android:label="Help Us"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".Uprofile"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".LoginHome"
             android:theme="@style/AppTheme.NoActionBar" />

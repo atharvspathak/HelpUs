@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ public class login_activity extends AppCompatActivity {
     private EditText password;
     private Button register;
     private Button login;
+    private ProgressBar progressBar;
     private FirebaseAuth firebaseAuth;
 
     @Override
@@ -34,8 +36,9 @@ public class login_activity extends AppCompatActivity {
 
         login =(Button) findViewById(R.id.orglogin);
         register=(Button) findViewById(R.id.register_button);
+        progressBar=(ProgressBar)findViewById(R.id.progressBar2) ;        //for progress bar
 
-
+        progressBar.setVisibility(View.INVISIBLE);                        //initialy invisible
         Intent intent=getIntent();
         String title=intent.getStringExtra(MainActivity.EXTRA_TEXT);
 
@@ -71,25 +74,39 @@ public class login_activity extends AppCompatActivity {
 
             }
         });
+
     }
 
     private void valdation(String username,String password)//signInwithEmailAndPassword
     {
-        firebaseAuth.signInWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful())
-                {
-                    Toast.makeText(login_activity.this,"Login Successful",Toast.LENGTH_SHORT).show();
-                    finish();
-                    startActivity(new Intent(login_activity.this,LoginHome.class));
+        if(username.isEmpty() || password.isEmpty())
+        {
+
+            Toast.makeText(login_activity.this,"Fill Details",Toast.LENGTH_SHORT).show();
+
+        }
+        else {
+            progressBar.setVisibility(View.VISIBLE);          // visible
+            login.setEnabled(false);
+            register.setEnabled(false);
+
+            firebaseAuth.signInWithEmailAndPassword(username, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        progressBar.setVisibility(View.INVISIBLE);                                      //before toast disable
+                        Toast.makeText(login_activity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                        finish();
+                        startActivity(new Intent(login_activity.this, LoginHome.class));
+                    } else {
+                        progressBar.setVisibility(View.INVISIBLE);                  //if credintals not match then agaon visible
+                        login.setEnabled(true);
+                        register.setEnabled((true));
+                        Toast.makeText(login_activity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                    }
                 }
-                else
-                {
-                    Toast.makeText(login_activity.this,"Login Failed",Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+            });
+        }
 
     }
 

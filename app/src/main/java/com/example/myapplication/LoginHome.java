@@ -29,6 +29,7 @@ public class LoginHome extends AppCompatActivity {
         usprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startActivity(new Intent(LoginHome.this,Uprofile.class));
 
             }
         });

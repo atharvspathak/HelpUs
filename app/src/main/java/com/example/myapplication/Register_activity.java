@@ -11,6 +11,7 @@ import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ public class Register_activity extends AppCompatActivity {
     private EditText confirm_password_text;
     private EditText mobile_number_text;
     private FirebaseAuth firebaseAuth;
+    private ProgressBar progressBar;
     String fnt,email,pass,cpass,mobile;
 
     private Button register;
@@ -48,12 +50,13 @@ public class Register_activity extends AppCompatActivity {
         mobile_number_text=(EditText) findViewById(R.id.mobile_number);
 
         register=(Button) findViewById(R.id.register_button_register);
+        progressBar=(ProgressBar)findViewById(R.id.progressBar3);
 
         firebaseAuth=FirebaseAuth.getInstance();
 
 
 
-
+        progressBar.setVisibility(View.INVISIBLE);
 
 
         register.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +64,8 @@ public class Register_activity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if (validate()) {
-
+                    progressBar.setVisibility(View.VISIBLE);
+                    register.setEnabled(false);
                     String Email = email_addreass_text.getText().toString().trim();
                     String Password = password_text.getText().toString().trim();
 
@@ -70,12 +74,15 @@ public class Register_activity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 SendUser();                                                         //call send user function
+                                progressBar.setVisibility(View.INVISIBLE);
                                 Toast.makeText(Register_activity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
                                 finish();
 
                                 startActivity(new Intent(Register_activity.this, MainActivity.class));
 
-                            } else {
+                            }
+                            else {
+                                register.setEnabled(true);
                                 Toast.makeText(Register_activity.this, "Error", Toast.LENGTH_SHORT).show();
                             }
 
@@ -119,12 +126,12 @@ public class Register_activity extends AppCompatActivity {
 
 
         FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();                           //Create db instane
-        DatabaseReference databaseReference=firebaseDatabase.getReference().child(firebaseAuth.getUid());      //Create refrence //getrRefrensce(firebaseAuth.geetUid();
-        SendData sd=new SendData();                                                                 //Cr5eate obj of send data
+        DatabaseReference databaseReference=firebaseDatabase.getReference().child(firebaseAuth.getUid());      //Create refrence and add data tomuid
+        SendData sd=new SendData();                                                                 //Create obj of send data
         sd.setName(fnt);                                                                            //set name
         sd.setEmail(email);                                                                         //set email
         sd.setContact(mobile);                                                                      //set contact
-        databaseReference.push().setValue(sd);                                                      //push sd values
+        databaseReference.setValue(sd);                                                      //push sd values
         Toast.makeText(Register_activity.this,"Data Uploaded successfully",Toast.LENGTH_SHORT).show();; //make toast
 
 

@@ -16,4 +16,19 @@
     <string name="profile">Profile</string>
     <string name="donate">donate</string>
     <string name="todo">TODO</string>
+    <string name="name">NAME :</string>
+    <string name="email">EMAIL :</string>
+    <string name="contact">CONTACT :</string>
+    <string name="show">Show</string>
+    <string name="back">BACK</string>
+    <string name="name_of_user">NAME OF USER</string>
+    <string name="email_of_user">EMAIL OF USER</string>
+    <string name="contact_of_user">CONTACT OF USER</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="username">Username</string>
+    <string name="login_as_user">Login as User</string>
+    <string name="password">Password</string>
+
+
 </resources>
