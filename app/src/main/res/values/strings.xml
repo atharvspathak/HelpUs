@@ -29,6 +29,9 @@
     <string name="username">Username</string>
     <string name="login_as_user">Login as User</string>
     <string name="password">Password</string>
+    <string name="name_of_organisation">name of organisation</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="organisation">Organisation</string>
 
 
 </resources>

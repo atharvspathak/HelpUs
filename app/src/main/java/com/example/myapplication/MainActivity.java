@@ -16,14 +16,14 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_TEXT="com.example.myapplication.EXTRA_TEXT";
-
+    private Button user,ngo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button user=(Button) findViewById(R.id.user_button);
-        Button ngo =(Button) findViewById(R.id.ngo_button);
+        user=(Button)findViewById(R.id.user_button);
+        ngo =(Button)findViewById(R.id.ngo_button);
 
         user.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,17 +42,5 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    public void nextActivity(int id){
 
-
-            Intent intent = new Intent(this, login_activity.class);
-            if(id==1){
-                intent.putExtra(EXTRA_TEXT,"Login as User");
-            }
-            else if(id==2){
-                intent.putExtra(EXTRA_TEXT,"Login as NGO");
-            }
-            startActivity(intent);
-
-    }
 }

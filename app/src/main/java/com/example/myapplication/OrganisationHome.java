@@ -32,6 +32,7 @@ public class OrganisationHome extends AppCompatActivity {
         usprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startActivity(new Intent(OrganisationHome.this,Oprofile.class));
 
             }
         });
