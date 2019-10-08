@@ -56,7 +56,7 @@
         app:layout_constraintStart_toStartOf="@+id/title"
         app:layout_constraintTop_toBottomOf="@+id/title"
         android:autofillHints=""
-        android:drawableStart="@drawable/username_icon" />
+        android:drawableStart="@drawable/username_icon" tools:targetApi="o"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/username_text_input_layout"
