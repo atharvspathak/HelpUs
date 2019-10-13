@@ -50,7 +50,7 @@ public class Uprofile extends AppCompatActivity {
             public void onClick(View v) {
                 Show.setEnabled(false);
                 progressBar.setVisibility(View.VISIBLE);
-                databaseReference= FirebaseDatabase.getInstance().getReference().child(firebaseAuth.getUid()); // instance of database  get refrence of database by uid
+                databaseReference= FirebaseDatabase.getInstance().getReference().child("User").child(firebaseAuth.getUid()); // instance of database  get refrence of database by uid
                 databaseReference.addValueEventListener(new ValueEventListener() {                  //addValueEvent Listenrt Is neccesory
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

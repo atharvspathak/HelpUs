@@ -49,6 +49,8 @@ public class OrganisationHome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                startActivity(new Intent(OrganisationHome.this,Ohelpedto.class));
+
             }
         });
 

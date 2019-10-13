@@ -126,7 +126,7 @@ public class Register_activity extends AppCompatActivity {
 
 
         FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();                           //Create db instane
-        DatabaseReference databaseReference=firebaseDatabase.getReference().child(firebaseAuth.getUid());      //Create refrence and add data tomuid
+        DatabaseReference databaseReference=firebaseDatabase.getReference().child("User").child(firebaseAuth.getUid());      //Create refrence and add data user-uid
         SendData sd=new SendData();                                                                 //Create obj of send data
         sd.setName(fnt);                                                                            //set name
         sd.setEmail(email);                                                                         //set email

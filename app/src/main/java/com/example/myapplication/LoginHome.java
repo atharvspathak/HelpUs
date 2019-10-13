@@ -26,6 +26,7 @@ public class LoginHome extends AppCompatActivity {
         feedback=(Button)findViewById(R.id.orgfeedback);
         Logout=(Button)findViewById(R.id.orglogout);
 
+
         usprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,7 +46,7 @@ public class LoginHome extends AppCompatActivity {
         helpnow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(LoginHome.this, help_now_user.class));
             }
         });
 

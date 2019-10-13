@@ -8,8 +8,16 @@
         android:label="Help Us"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Oprofile"></activity>
+        android:theme="@style/Theme.AppCompat.DayNight">
+        <activity android:name=".help_now_user"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".Ohelpedto"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Oprofile"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Uprofile"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -31,7 +39,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
-            android:label="        Help Us"
+            android:label=" Help Us"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

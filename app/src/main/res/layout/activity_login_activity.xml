@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@mipmap/activity2_background"
+    android:background="@mipmap/user_profile_background"
     android:layout_height="match_parent"
     tools:context=".login_activity">
     <Button
@@ -91,7 +91,8 @@
             app:layout_constraintEnd_toEndOf="@+id/title"
             app:layout_constraintHorizontal_bias="0.35"
             app:layout_constraintStart_toStartOf="@+id/title"
-            tools:layout_editor_absoluteY="356dp" />
+            tools:layout_editor_absoluteY="356dp"
+            android:autofillHints="" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

@@ -32,6 +32,7 @@
     <string name="name_of_organisation">name of organisation</string>
     <string name="contact_number">Contact Number</string>
     <string name="organisation">Organisation</string>
+    <string name="refresh">Refresh</string>
 
 
 </resources>
