@@ -34,5 +34,12 @@
     <string name="organisation">Organisation</string>
     <string name="refresh">Refresh</string>
 
+    <string-array name="Type">
+        <item>Food</item>
+        <item>Clothes</item>
+        <item>Money</item>
 
+
+    </string-array>
 </resources>
+
