@@ -19,17 +19,17 @@ public class LoginHome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_home);
-        usprofile=(Button)findViewById(R.id.orgprofile);
-        donate=(Button)findViewById(R.id.donations);
-        helpnow=(Button)findViewById(R.id.helpto);
-        history=(Button)findViewById(R.id.history);
-        feedback=(Button)findViewById(R.id.orgfeedback);
-        Logout=(Button)findViewById(R.id.orglogout);
+        usprofile = (Button) findViewById(R.id.orgprofile);
+        donate = (Button) findViewById(R.id.donations);
+        helpnow = (Button) findViewById(R.id.helpto);
+        history = (Button) findViewById(R.id.history);
+        feedback = (Button) findViewById(R.id.orgfeedback);
+        Logout = (Button) findViewById(R.id.orglogout);
 
         usprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginHome.this,Uprofile.class));
+                startActivity(new Intent(LoginHome.this, Uprofile.class));
 
             }
         });
@@ -37,6 +37,7 @@ public class LoginHome extends AppCompatActivity {
         donate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                openUserDonation();
 
             }
         });
@@ -70,10 +71,14 @@ public class LoginHome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
-                startActivity(new Intent(LoginHome.this,MainActivity.class));
+                startActivity(new Intent(LoginHome.this, MainActivity.class));
 
             }
         });
+    }
 
+    public void openUserDonation() {
+        Intent intent = new Intent(this, UserDonation.class);
+        startActivity(intent);
     }
 }
