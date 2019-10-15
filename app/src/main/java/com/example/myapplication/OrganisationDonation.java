@@ -26,9 +26,11 @@ public class OrganisationDonation extends AppCompatActivity {
     private Button Show,Back;
     private ListView donation;
     private DatabaseReference mDatabase;
+    private DatabaseReference nDatabase;//For donar name
     private FirebaseAuth firebaseAuth;
     private ArrayList<String> mUsernamee=new ArrayList<>();
     private ProgressBar progressBar;
+
 
 
     @Override
@@ -44,6 +46,8 @@ public class OrganisationDonation extends AppCompatActivity {
 
         progressBar.setVisibility(View.INVISIBLE);
         firebaseAuth=FirebaseAuth.getInstance();
+
+
         mDatabase= FirebaseDatabase.getInstance().getReference().child("Donation"); //
 
         final ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(OrganisationDonation.this,android.R.layout.simple_expandable_list_item_1,mUsernamee);
@@ -61,16 +65,19 @@ public class OrganisationDonation extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 progressBar.setVisibility(View.VISIBLE);
+
                 mDatabase.addChildEventListener(new ChildEventListener() {
                     @Override
                     public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                        String Quantity=dataSnapshot.child("quantity").getValue().toString();               //TO retrive data datasnapshot.chid("name of attribut").getvalue.tostring
+                        
+                        String Quantity=dataSnapshot.child("quantity").getValue().toString();         //TO retrive data datasnapshot.chid("name of attribut").getvalue.tostring
                         String Cloths=dataSnapshot.child("cloths").getValue().toString();
                         String Money=dataSnapshot.child("amount").getValue().toString();
 
-                        mUsernamee.add(Quantity);                                //Add to list
-                        mUsernamee.add(Cloths);
-                        mUsernamee.add(Money);
+
+                        mUsernamee.add("FOOD QUANTITY(KG):"+Quantity);                                //Add to list
+                        mUsernamee.add("Cloths QUANTITY:"+Cloths);
+                        mUsernamee.add("AMOUNT(RS):"+Money);
                         mUsernamee.add(" ");
 
                         arrayAdapter.notifyDataSetChanged();

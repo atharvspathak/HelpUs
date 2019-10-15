@@ -19,15 +19,20 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.core.Constants;
 
 public class UserDonation extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private Button Submit;
     private EditText quan,cloths,amount;
     private Spinner spinner;
     private FirebaseAuth firebaseAuth;
-    private DatabaseReference databaseReference;
     String Quan,Cloths,Amount;
     private ProgressBar progressBar;
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +40,7 @@ public class UserDonation extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_user_donation);
 
 
-        Spinner spinner = findViewById(R.id.spinner);
+        spinner = findViewById(R.id.spinner);
         Submit=(Button)findViewById(R.id.submit);
         quan=(EditText)findViewById(R.id.quantity);
         cloths=(EditText)findViewById(R.id.noofclothes);
@@ -75,15 +80,18 @@ public class UserDonation extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
+
     public void SendDonation(){
 
         FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();                           //Create db instane
-        DatabaseReference databaseReference=firebaseDatabase.getReference().child("Donation").child(firebaseAuth.getUid());      //Create refrence and add data user-uid
+        final DatabaseReference databaseReference=firebaseDatabase.getReference().child("Donation").child(firebaseAuth.getUid()); //For donation     //Create refrence and add data user-uid
+        SendDataD don=new SendDataD();            //final because need to be use in inner class ie addListenrt
 
-        SendDataD don=new SendDataD();
         Quan=quan.getText().toString();
         Cloths=cloths.getText().toString();
         Amount=amount.getText().toString();
+
+
         don.setQuantity(Quan);
         don.setCloths(Cloths);
         don.setAmount(Amount);
@@ -92,10 +100,6 @@ public class UserDonation extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
-
-
-
-
 }
 class SendDataD{
     String quantity,cloths,amount;
@@ -103,7 +107,9 @@ class SendDataD{
     public SendDataD() {
     }
 
+
     public String getQuantity() {
+
         return quantity;
     }
 
@@ -126,4 +132,6 @@ class SendDataD{
     public void setAmount(String amount) {
         this.amount = amount;
     }
+
+
 }

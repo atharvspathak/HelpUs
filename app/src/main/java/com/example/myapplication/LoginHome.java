@@ -14,6 +14,7 @@ public class LoginHome extends AppCompatActivity {
     private Button history;
     private Button feedback;
     private Button Logout;
+    private Button i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +26,14 @@ public class LoginHome extends AppCompatActivity {
         history = (Button) findViewById(R.id.history);
         feedback = (Button) findViewById(R.id.orgfeedback);
         Logout = (Button) findViewById(R.id.orglogout);
+        i=(Button)findViewById(R.id.button1);
 
-
+        i.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginHome.this,AppInfo.class));
+            }
+        });
         usprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,6 +70,7 @@ public class LoginHome extends AppCompatActivity {
         feedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startActivity(new Intent(LoginHome.this,feedback.class));
 
             }
         });

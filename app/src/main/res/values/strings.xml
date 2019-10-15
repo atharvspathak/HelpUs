@@ -33,6 +33,14 @@
     <string name="contact_number">Contact Number</string>
     <string name="organisation">Organisation</string>
     <string name="refresh">Refresh</string>
+    <string name="who_we_are">Who We are?</string>
+    <string name="helpus">HelpUs</string>
+    <string name="version_1_0_0">Version 1.0.0</string>
+    <string name="we_are_a_group_of_people_who_wants_help_the_society_the_same_society_from_which_we_got_such_a_inspiration_we_help_people_by_giving_them_funds_clothes_etc">We are a group of people who wants help the society.The same society from which we got such a inspiration.We help people by giving them Funds , Clothes etc.</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="submit">Submit</string>
+    <string name="rate_the_ngo">Rate the NGO</string>
+    <string name="your_feedback_will_always_help_us_to_improve">Your Feedback will always help us to improve</string>
 
     <string-array name="Type">
         <item>Food</item>

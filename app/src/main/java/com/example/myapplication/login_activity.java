@@ -81,6 +81,7 @@ public class login_activity extends AppCompatActivity {
     {
         if(username.isEmpty() || password.isEmpty())
         {
+            progressBar.setVisibility(View.INVISIBLE);
 
             Toast.makeText(login_activity.this,"Fill Details",Toast.LENGTH_SHORT).show();
 
