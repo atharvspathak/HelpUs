@@ -40,7 +40,7 @@ public class OrganisationHome extends AppCompatActivity {
         donate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(OrganisationHome.this,OrganisationDonation.class));
             }
         });
 

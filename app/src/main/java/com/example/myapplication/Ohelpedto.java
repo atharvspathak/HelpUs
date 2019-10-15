@@ -37,7 +37,7 @@ public class Ohelpedto extends AppCompatActivity {
 
 
         firebaseAuth=FirebaseAuth.getInstance();
-        mDatabase= FirebaseDatabase.getInstance().getReference(); //
+        mDatabase= FirebaseDatabase.getInstance().getReference().child("User"); //
 
         mUserList=(ListView)findViewById(R.id.userList);
         Show=(Button)findViewById(R.id.button);

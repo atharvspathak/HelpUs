@@ -73,8 +73,8 @@
         android:layout_marginEnd="52dp"
         android:layout_marginRight="52dp"
         android:ems="10"
+        android:hint="Quantity"
         android:inputType="textPersonName"
-        android:text="Quantity"
         app:layout_constraintBottom_toTopOf="@+id/noofclothes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
@@ -87,8 +87,8 @@
         android:layout_marginEnd="52dp"
         android:layout_marginRight="52dp"
         android:ems="10"
+        android:hint="NoofClothes"
         android:inputType="textPersonName"
-        android:text="NoofClothes"
         app:layout_constraintBottom_toTopOf="@+id/amount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
@@ -101,8 +101,8 @@
         android:layout_marginEnd="52dp"
         android:layout_marginRight="52dp"
         android:ems="10"
+        android:hint="Amount"
         android:inputType="textPersonName"
-        android:text="Amount"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
@@ -130,4 +130,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/amount"
         app:layout_constraintVertical_bias="0.285" />
+
+    <ProgressBar
+        android:id="@+id/progressBar5"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/submit"
+        app:layout_constraintEnd_toEndOf="@+id/quantity"
+        app:layout_constraintStart_toStartOf="@+id/food"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

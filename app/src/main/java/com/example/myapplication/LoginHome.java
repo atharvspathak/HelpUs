@@ -38,7 +38,7 @@ public class LoginHome extends AppCompatActivity {
         donate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openUserDonation();
+            startActivity(new Intent(LoginHome.this,UserDonation.class));
 
             }
         });
@@ -78,8 +78,5 @@ public class LoginHome extends AppCompatActivity {
         });
     }
 
-    public void openUserDonation() {
-        Intent intent = new Intent(this, UserDonation.class);
-        startActivity(intent);
-    }
+
 }

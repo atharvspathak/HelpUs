@@ -13,6 +13,13 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
+            android:name=".OrganisationDonation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UserDonation"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
             android:name=".Ohelpedto"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
