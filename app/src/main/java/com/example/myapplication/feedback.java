@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -15,10 +16,10 @@ import java.util.RandomAccess;
 
 public class feedback extends AppCompatActivity {
     private RatingBar Ngo;
-    private RatingBar us;
     private Button submit;
     FirebaseAuth firebaseAuth;
-    FirebaseDatabase firebaseDatabase;
+    float a;
+    String a1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +27,9 @@ public class feedback extends AppCompatActivity {
         setContentView(R.layout.activity_feedback);
 
         Ngo=(RatingBar)findViewById(R.id.ratingBar2);
-        us=(RatingBar)findViewById(R.id.ratingBar);
         submit=(Button)findViewById(R.id.button);
 
         firebaseAuth=FirebaseAuth.getInstance();
-        firebaseDatabase=FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference=FirebaseDatabase.getInstance().getReference().child("Feedback").child(firebaseAuth.getUid());
 
 
 
@@ -42,6 +40,9 @@ public class feedback extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+            sendFed();
+                Toast.makeText(feedback.this,"Feedback Send Successfully",Toast.LENGTH_SHORT).show();;
+
 
 
             }
@@ -50,6 +51,31 @@ public class feedback extends AppCompatActivity {
 
     public void sendFed()
     {
+        FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
+        final DatabaseReference databaseReference=firebaseDatabase.getReference().child("Feedback").child(firebaseAuth.getUid());
+        SendFeedback sf=new SendFeedback();
+        a=Ngo.getRating();
+        a1=Float.toString(a);
+        sf.setFeedback(a1);
 
+        databaseReference.setValue(sf);
+
+
+
+    }
+}
+
+class SendFeedback
+{
+    String feedback;
+    public SendFeedback() {
+    }
+
+    public String getFeedback() {
+        return feedback;
+    }
+
+    public void setFeedback(String feedback) {
+        this.feedback = feedback;
     }
 }

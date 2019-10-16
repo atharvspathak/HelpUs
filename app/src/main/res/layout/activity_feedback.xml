@@ -6,29 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".feedback">
 
-    <RatingBar
-        android:id="@+id/ratingBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView8"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/ratingBar2" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="224dp"
-        android:layout_height="48dp"
-        android:text="@string/rate_us"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/ratingBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingBar2"
-        app:layout_constraintVertical_bias="0.539" />
-
     <Button
         android:id="@+id/button"
         android:layout_width="118dp"
@@ -40,13 +17,13 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.807" />
+        app:layout_constraintVertical_bias="0.842" />
 
     <RatingBar
         android:id="@+id/ratingBar2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="268dp"
+        android:layout_width="242dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="96dp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="@+id/textView10"
         app:layout_constraintHorizontal_bias="0.51"
@@ -62,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.257" />
+        app:layout_constraintVertical_bias="0.605" />
 
     <TextView
         android:id="@+id/textView11"
@@ -71,7 +48,9 @@
         android:layout_marginTop="16dp"
         android:text="@string/your_feedback_will_always_help_us_to_improve"
         android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.091" />
 </androidx.constraintlayout.widget.ConstraintLayout>
