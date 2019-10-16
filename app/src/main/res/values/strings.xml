@@ -49,5 +49,7 @@
 
 
     </string-array>
+    <string name="title_activity_get_location">Map</string>
+    <string name="title_activity_locate__person__org">Map</string>
 </resources>
 

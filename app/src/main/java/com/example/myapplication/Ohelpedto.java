@@ -37,7 +37,7 @@ public class Ohelpedto extends AppCompatActivity {
 
 
         firebaseAuth=FirebaseAuth.getInstance();
-        mDatabase= FirebaseDatabase.getInstance().getReference().child("User"); //
+        mDatabase= FirebaseDatabase.getInstance().getReference().child("HelpInfo"); //
 
         mUserList=(ListView)findViewById(R.id.userList);
         Show=(Button)findViewById(R.id.button);
@@ -60,14 +60,21 @@ public class Ohelpedto extends AppCompatActivity {
             mDatabase.addChildEventListener(new ChildEventListener() {                            //To get event listener to database
                 @Override
                 public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                    String name=dataSnapshot.child("name").getValue().toString();               //TO retrive data datasnapshot.chid("name of attribut").getvalue.tostring
-                    String email=dataSnapshot.child("email").getValue().toString();
-                    String contact=dataSnapshot.child("contact").getValue().toString();
+                    String gender=dataSnapshot.child("gender").getValue().toString();               //TO retrive data datasnapshot.chid("name of attribut").getvalue.tostring
+                    String add=dataSnapshot.child("location").getValue().toString();
+                    String no=dataSnapshot.child("numberofpersons").getValue().toString();
+                    String age=dataSnapshot.child("personAge").getValue().toString();
+                    String name=dataSnapshot.child("personName").getValue().toString();
+                    String problem=dataSnapshot.child("personProblem").getValue().toString();
+                    String type=dataSnapshot.child("personType").getValue().toString();
 
-
-                    mUsername.add(name);                                //Add to list
-                    mUsername.add(email);
-                    mUsername.add(contact);
+                    mUsername.add("Name:"+name);                                //Add to list
+                    mUsername.add("Age:"+age);
+                    mUsername.add("Gender:"+gender);
+                    mUsername.add("address:"+add);
+                    mUsername.add("type"+type);
+                    mUsername.add("Number Of Perosns:"+no);
+                    mUsername.add("Problem:"+problem);
                     mUsername.add(" ");
 
                     arrayAdapter.notifyDataSetChanged();

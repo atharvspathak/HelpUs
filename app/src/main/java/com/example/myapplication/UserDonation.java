@@ -28,6 +28,7 @@ public class UserDonation extends AppCompatActivity implements AdapterView.OnIte
     private FirebaseAuth firebaseAuth;
     String Quan,Cloths,Amount;
     private ProgressBar progressBar;
+    String cat;
 
 
 
@@ -72,6 +73,7 @@ public class UserDonation extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String text = adapterView.getItemAtPosition(i).toString();
+        cat=text;
         Toast.makeText(adapterView.getContext(),text,Toast.LENGTH_SHORT).show();
     }
 
@@ -91,7 +93,7 @@ public class UserDonation extends AppCompatActivity implements AdapterView.OnIte
         Cloths=cloths.getText().toString();
         Amount=amount.getText().toString();
 
-
+        don.setCategory(cat);
         don.setQuantity(Quan);
         don.setCloths(Cloths);
         don.setAmount(Amount);
@@ -102,7 +104,7 @@ public class UserDonation extends AppCompatActivity implements AdapterView.OnIte
 
 }
 class SendDataD{
-    String quantity,cloths,amount;
+    String quantity,cloths,amount,category;
 
     public SendDataD() {
     }
@@ -111,6 +113,14 @@ class SendDataD{
     public String getQuantity() {
 
         return quantity;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public void setQuantity(String quantity) {

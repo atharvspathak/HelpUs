@@ -69,12 +69,12 @@ public class OrganisationDonation extends AppCompatActivity {
                 mDatabase.addChildEventListener(new ChildEventListener() {
                     @Override
                     public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                        
+                        String Category=dataSnapshot.child("category").getValue().toString();
                         String Quantity=dataSnapshot.child("quantity").getValue().toString();         //TO retrive data datasnapshot.chid("name of attribut").getvalue.tostring
                         String Cloths=dataSnapshot.child("cloths").getValue().toString();
                         String Money=dataSnapshot.child("amount").getValue().toString();
 
-
+                        mUsernamee.add("Category:"+Category);
                         mUsernamee.add("FOOD QUANTITY(KG):"+Quantity);                                //Add to list
                         mUsernamee.add("Cloths QUANTITY:"+Cloths);
                         mUsernamee.add("AMOUNT(RS):"+Money);
